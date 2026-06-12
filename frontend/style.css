@@ -1,0 +1,289 @@
+/* ─── RESET ─────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── VARIABLES ──────────────────────────────────────────────────── */
+
+:root {
+  --bg:              #0f172a;
+  --bg-deep:         #080f1e;
+  --surface:         #1e293b;
+  --surface-raised:  #243044;
+  --border:          #1e3250;
+  --border-subtle:   rgba(255, 255, 255, 0.06);
+
+  --accent:          #2563eb;
+  --accent-mid:      #1d4ed8;
+  --accent-dark:     #1e3a8a;
+
+  --text:            #f0f6ff;
+  --text-dim:        #64748b;
+  --text-item:       #cbd5e1;
+
+  --shadow-card:     0 8px 40px rgba(0, 0, 0, 0.55);
+
+  --header-h:        104px;
+  --pad-h:           52px;
+  --pad-v:           32px;
+  --gap:             24px;
+  --radius:          16px;
+}
+
+/* ─── BASE ───────────────────────────────────────────────────────── */
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────────── */
+
+.header {
+  height: var(--header-h);
+  flex-shrink: 0;
+  background: var(--bg-deep);
+  border-bottom: 3px solid var(--accent);
+  padding: 0 var(--pad-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.brand-occ {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.brand-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+/* Right cluster */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Clock */
+
+.clock-block {
+  text-align: right;
+}
+
+.clock-time {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.clock-date {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Divider */
+
+.header-divider {
+  width: 1px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Update */
+
+.update-block {
+  text-align: right;
+}
+
+.update-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.18em;
+}
+
+.update-value {
+  margin-top: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.update-value.pending {
+  color: var(--text-dim);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* ─── MAIN ───────────────────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  min-height: 0;
+  padding: var(--pad-v) var(--pad-h);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── GRID ───────────────────────────────────────────────────────── */
+
+.grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── CARD ───────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Card header */
+
+.card-header {
+  flex-shrink: 0;
+  background: linear-gradient(135deg,
+    var(--accent-dark)  0%,
+    var(--accent-mid)  55%,
+    var(--accent)      100%
+  );
+  padding: 22px 32px 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+
+.card-location {
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+  color: #fff;
+  line-height: 1;
+}
+
+/* Card body */
+
+.card-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 6px 0;
+}
+
+.card-body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card items */
+
+.card-item {
+  padding: 18px 32px;
+  font-size: 1.45rem;
+  line-height: 1.55;
+  color: var(--text-item);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.card-item:last-child {
+  border-bottom: none;
+}
+
+.card-empty {
+  padding: 28px 32px;
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* ─── EMPTY STATE ────────────────────────────────────────────────── */
+
+.state-empty {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--text-dim);
+  min-height: 300px;
+}
+
+.state-empty svg {
+  opacity: 0.2;
+}
+
+.state-empty p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.state-empty span {
+  font-size: 0.95rem;
+  opacity: 0.65;
+}

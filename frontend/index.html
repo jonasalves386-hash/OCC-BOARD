@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCC Daily Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <span class="brand-occ">OCC</span>
+      <span class="brand-title">DAILY BOARD</span>
+    </div>
+
+    <div class="header-right">
+      <div class="clock-block">
+        <div class="clock-time" id="clock-time">--:--</div>
+        <div class="clock-date" id="clock-date">---</div>
+      </div>
+      <div class="header-divider"></div>
+      <div class="update-block">
+        <div class="update-label">ÚLTIMA ATUALIZAÇÃO</div>
+        <div class="update-value pending" id="timestamp">Aguardando publicação</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="grid" id="cards-grid"></div>
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

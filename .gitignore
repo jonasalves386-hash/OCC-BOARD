@@ -1,0 +1,16 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Credenciais Google
+backend/credentials/
+backend/*.json
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
