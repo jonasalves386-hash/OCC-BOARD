@@ -7,7 +7,8 @@ node_modules/
 
 # Credenciais Google
 backend/credentials/
-backend/*.json
+aqueous-cargo-496119-e5-213ae49241a1.json
+service-account.json
 
 # VS Code
 .vscode/
